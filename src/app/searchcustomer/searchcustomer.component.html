@@ -1,0 +1,68 @@
+<body>
+  <div class="container">
+    <div class='row'>
+      <div class="col-md-12">
+        <form [formGroup]="searchCustomerForm">
+          <br />
+          <table>
+            <tr>
+              <td class="col-md-7">
+                <input type="text" class="form-control" formControlName="searchText" placeholder="Search For Customer">
+              </td>
+              <td class="col-md-5">
+                <button type="button" class="btn btn-primary" (click)="onSearchButtonClick()">Search</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label class="radio-inline">
+                  <input type="radio" formControlName="selectedSearchRadioButtonValue" [value]="radioItems0">EIN
+                </label>
+
+                <label class="radio-inline">
+                  <input type="radio" formControlName="selectedSearchRadioButtonValue" [value]="radioItems1">Entity Name
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" formControlName="selectedSearchRadioButtonValue" [value]="radioItems2">UBO
+                </label>
+              </td>
+            </tr>
+          </table>
+
+          <div>
+            <table class="table">
+              <thead>
+                <tr class="table-active">
+                  <th></th>
+                  <th>Entity Name</th>
+                  <th>EIN</th>
+                  <th>UBO</th>
+                  <th>LOB</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor="let customer of _customers;let i=index">
+                  <tr>
+                    <th>{{i+1}}</th>
+                    <td>{{customer.entityName}}</td>
+                    <td>{{customer.ein}} </td>
+                    <td>{{customer.ubo}}</td>
+                    <td>{{customer.lineOfBusiness}}</td>
+                    <td>{{customer.status}}</td>
+                    <td>
+                      <a [routerLink]="['/create', customer.ein]">
+                        {{customer.status === 'Complete'?'View' : 'Clone'}}
+                      </a>
+                    </td>
+                  </tr>
+                </ng-container>
+              </tbody>
+            </table>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

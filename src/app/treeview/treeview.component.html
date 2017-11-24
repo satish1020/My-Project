@@ -1,0 +1,42 @@
+
+<body>
+  <div class="container">
+    <div class='row'>
+      <div class="col-md-12">
+        <!--<h4>Customer Information</h4>-->
+        <!--<h3>
+            <small class="text-muted">Customer Tree View Information</small>
+        </h3>-->
+        <!--<link rel="stylesheet" href="../Content/ubotree.js">-->
+        <table class="col-md-12">
+          <tr>
+            <td>
+              <label class="col-form-label" for="inputDefault">Name</label>
+            </td>
+            <td><input type="text" class="form-control" id="Name" placeholder="Name" [(ngModel)]="customertreeviewinfo.Name" /></td>
+          </tr>
+
+          <tr>
+            <td>
+              <label class="col-form-label" for="inputDefault">ITIN:</label>
+            </td>
+            <td><input type="text" class="form-control" id="ITIN" placeholder="ITIN" [(ngModel)]="customertreeviewinfo.ITIN" /></td>
+          </tr>
+
+          <tr>
+            <td>
+              <label class="col-form-label" for="inputDefault">Percentage Owner:</label>
+            </td>
+            <td><input type="text" class="form-control" id="PercentageOwner" placeholder="PercentageOwner" [(ngModel)]="customertreeviewinfo.PercentageOwner" /></td>
+          </tr>
+        </table>
+        <button type="submit" class="btn btn-primary">Add New UBO</button>
+      </div>
+    </div>
+  </div>
+  <!--<Selected-Info>Loading AppComponent content here ...</Selected-Info>-->
+
+  <script src="//d3js.org/d3.v3.min.js"></script>
+  <script src="../Content/ubotree.js"></script>
+
+</body>

@@ -1,0 +1,239 @@
+<body>
+  <div class="container">
+    <div class='row'>
+      <div class="col-md-12">
+        <form [formGroup]="createCustomerForm" (ngSubmit)="onSubmit()">
+          <table class="col-md-12">
+            <tr>
+              <td>
+                <label>Entity Name</label>
+              </td>
+
+              <td>
+                <input type="text" class="form-control" formControlName="entityName">
+
+                <div *ngIf="(createCustomerForm.get('entityName').touched ||
+                                            createCustomerForm.get('entityName').dirty) &&
+                                            createCustomerForm.get('entityName').errors"
+                     class="error">
+
+                  <span *ngIf="createCustomerForm.get('entityName').errors.required">
+                    Please enter entity name.
+                  </span>
+                  <span *ngIf="createCustomerForm.get('entityName').errors.maxlength ">
+                    The entity name should not be greater than 50 characters.
+                  </span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label>EIN</label>
+              </td>
+              <td>
+                <input type="text" class="form-control" formControlName="ein">
+                <div *ngIf="(createCustomerForm.get('ein').touched ||
+                                createCustomerForm.get('ein').dirty) &&
+                                createCustomerForm.get('ein').errors" class="error">
+                  <span *ngIf="createCustomerForm.get('ein').errors.required">
+                    Please enter EIN.
+                  </span>
+
+                  <span *ngIf="createCustomerForm.get('ein').errors.minlength ">
+                    The EIN should be greater than 3 characters.
+                  </span>
+
+                  <span *ngIf="createCustomerForm.get('ein').errors.maxlength ">
+                    The EIN should not be greater than 9 characters.
+                  </span>
+
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label>UBO</label>
+              </td>
+              <td>
+                <input type="text" class="form-control" formControlName="ubo">
+                <div *ngIf="(createCustomerForm.get('ubo').touched ||
+                                createCustomerForm.get('ubo').dirty) &&
+                                createCustomerForm.get('ubo').errors" class="error">
+                  <span *ngIf="createCustomerForm.get('ubo').errors.required">
+                    Please enter UBO.
+                  </span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label>Classification Code</label>
+              </td>
+              <td>
+                <input type="text" class="form-control" formControlName="classificationCode">
+                <div *ngIf="(createCustomerForm.get('classificationCode').touched ||
+                                            createCustomerForm.get('classificationCode').dirty) &&
+                                            createCustomerForm.get('classificationCode').errors" class="error">
+                  <span *ngIf="createCustomerForm.get('classificationCode').errors.required">
+                    Please enter classificationCode.
+                  </span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label>Formation Zip Code</label>
+              </td>
+              <td>
+                <input type="text" class="form-control" formControlName="formationZipCode">
+                <div *ngIf="(createCustomerForm.get('formationZipCode').touched ||
+                                            createCustomerForm.get('formationZipCode').dirty) &&
+                                            createCustomerForm.get('formationZipCode').errors" class="error">
+                  <span *ngIf="createCustomerForm.get('formationZipCode').errors.required">
+                    Please enter formation ZipCode.
+                  </span>
+                  <span *ngIf="createCustomerForm.get('formationZipCode').errors.validateZIP">
+                    Please enter valid formation ZipCode.
+                  </span>
+                </div>
+              </td>
+            </tr>
+
+
+            <tr>
+              <td>
+                <label>Formation Country Code</label>
+              </td>
+              <td>
+                <input type="text" class="form-control" formControlName="formationCountryCode">
+                <div *ngIf="(createCustomerForm.get('formationCountryCode').touched ||
+                                            createCustomerForm.get('formationCountryCode').dirty) &&
+                                            createCustomerForm.get('formationCountryCode').errors" class="error">
+                  <span *ngIf="createCustomerForm.get('formationCountryCode').errors.required">
+                    Please enter formationCountryCode.
+                  </span>
+                </div>
+              </td>
+            </tr>
+
+
+            <tr>
+              <td>
+                <label>Business Zip Code</label>
+              </td>
+              <td>
+                <input type="text" class="form-control" formControlName="businessZipCode">
+                <div *ngIf="(createCustomerForm.get('businessZipCode').touched ||
+                    createCustomerForm.get('businessZipCode').dirty) &&
+                        createCustomerForm.get('businessZipCode').errors" class="error">
+                  <span *ngIf="createCustomerForm.get('businessZipCode').errors.required">
+                    Please enter businessZipCode.
+                  </span>
+                </div>
+              </td>
+            </tr>
+
+
+            <tr>
+              <td>
+                <label>Business Country Code</label>
+              </td>
+              <td>
+                <input type="text" class="form-control" formControlName="businessCountryCode">
+                <div *ngIf="(createCustomerForm.get('businessCountryCode').touched ||
+                                            createCustomerForm.get('businessCountryCode').dirty) &&
+                                            createCustomerForm.get('businessCountryCode').errors" class="error">
+                  <span *ngIf="createCustomerForm.get('businessCountryCode').errors.required">
+                    Please enter businessCountryCode.
+                  </span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label>Permenant Zip Code</label>
+              </td>
+              <td>
+                <input type="text" class="form-control" formControlName="permenantZipCode">
+                <div *ngIf="(createCustomerForm.get('permenantZipCode').touched ||
+                                            createCustomerForm.get('permenantZipCode').dirty) &&
+                                            createCustomerForm.get('permenantZipCode').errors" class="error">
+                  <span *ngIf="createCustomerForm.get('permenantZipCode').errors.required">
+                    Please enter permenantZipCode.
+                  </span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label>Permenant Country Code</label>
+              </td>
+              <td>
+                <input type="text" class="form-control" formControlName="permenantCountryCode">
+                <div *ngIf="(createCustomerForm.get('permenantCountryCode').touched ||
+                                            createCustomerForm.get('permenantCountryCode').dirty) &&
+                                            createCustomerForm.get('permenantCountryCode').errors" class="error">
+                  <span *ngIf="createCustomerForm.get('permenantCountryCode').errors.required">
+                    Please enter permenantCountryCode.
+                  </span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label>Status</label>
+              </td>
+              <td>
+                <input type="text" class="form-control" formControlName="status">
+                <div *ngIf="(createCustomerForm.get('status').touched ||
+                                            createCustomerForm.get('status').dirty) &&
+                                            createCustomerForm.get('status').errors" class=" error">
+                  <span *ngIf="createCustomerForm.get('status').errors.required">
+                    Please enter status.
+                  </span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label>EIN</label>
+              </td>
+              <td>
+                <input type="text" class="form-control" formControlName="lineOfBusiness">
+                <div *ngIf="(createCustomerForm.get('lineOfBusiness').touched ||
+                                            createCustomerForm.get('lineOfBusiness').dirty) &&
+                                            createCustomerForm.get('lineOfBusiness').errors" class="error">
+                  <span *ngIf="createCustomerForm.get('lineOfBusiness').errors.required">
+                    Please enter lineOfBusiness.
+                  </span>
+                </div>
+              </td>
+            </tr>
+
+
+          </table>
+          <button type="submit" class="btn btn-primary">Save</button>
+          <!--[disabled]="createCustomerForm.valid"-->
+          <button type="button" class="btn btn-primary" (click)="cancel()">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<style>
+  .error {
+    color: #d93a3e;
+  }
+
+  #year {
+    width: 50px;
+  }
+</style>
