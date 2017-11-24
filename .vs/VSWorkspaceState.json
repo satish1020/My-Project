@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\app\\customerexemptionselection",
+    "\\src\\app\\searchcustomer"
   ],
-  "SelectedNode": "\\package.json2",
+  "SelectedNode": "\\src\\index.html",
   "PreviewInSolutionExplorer": false
 }
